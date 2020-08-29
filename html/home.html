@@ -59,7 +59,7 @@ label {
 </head>
 <body>
 
-<h2>Welcome to Compete With Me</h2>
+<h2>Welcome to CompeteWithMe</h2>
   
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Welcome')" id="defaultOpen">SignIn</button>
@@ -68,45 +68,53 @@ label {
 </div>
 
 <div id="Welcome" class="tabcontent">
-  <p> Hello there, FUN4KIDS is a website  made for kids who might be bored during this global pandemic. We know how hard it is for parents to manage a job and a bored child. We hope this website will help kids get over their boredom in a fun way! This website is totally free of cost and is open to all ages. We hope this website will help you and your child have fun during these days we are stuck at home.</p>
-<p> ~SAFETY~  We are very concerned about online safety. To ensure you, we will never ask for any personal information or any other information. Your child will only have to make up a username such as (Unipowergirl) and make a random password to log in </p>
+  <p> Hello there. Welcome to <b>CompeteWithMe</b> website made for people of all ages who might be bored and not very motivated to be active, happy, and have fun during this global pandemic. This website is totally free of cost and is open to all ages. We hope this website will help all to stay fit, healthy, and happy.</p>
+<p> ~ONLINE SAFETY~  We are very concerned about online safety. To ensure you, we will never ask for any personal information or any other information. Your child will only have to make up a username such as (Unipowergirl) and make a random password to log in. </p>
 
   <h3>User Login</h3>
-  <form action="/action_page.php">
-  <label for="fname">Username</label>
-  <input type="text" id="fname" name="fname"><br><br>
+  <form action="/user_login" method="post">
+  <label for="uname">Username</label>
+  <input type="text" id="uname" name="uname" minlength="4" required><br><br>
   <label for="lname">Password</label>
-  <input type="text" id="lname" name="lname"><br><br>
+  <input type="password" id="pwd" name="pwd" minlength="4" required><br><br>
   <input type="submit" value="Submit">
 </form>
+{% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
 </div>
 
 <div id="Create Account" class="tabcontent">
   <h3>Please enter the registration details.</h3>
-  <form action="/action_page.php">
+  <form action="/create_account" method="post">
   <label for="fname">Username</label>
-  <input type="text" id="fname" name="fname"><br><br>
+  <input type="text" id="uname" name="uname"  minlength="4" required><br><br>
   <label for="lname">Password</label>
-  <input type="text" id="lname" name="lname"><br><br>
+  <input type="password" id="pwd" name="pwd"  minlength="4" required><br><br>
     <label for="confirm_pwd">Confirm</label>
-  <input type="text" id="confirm_pwd" name="confirm_pwd"><br><br>
+  <input type="password" id="confirm_pwd" name="confirm_pwd"  minlength="4" required><br><br>
   <label for="email">Email</label>
-  <input type="text" id="email" name="email"><br><br>
+  <input type="email" id="email" name="email"><br><br>
   <input type="submit" value="Submit">
 </form>
-
+{% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+{% endif %}
 
 
 </div>
 <div id="Admin Login" class="tabcontent">
   <h3>Admin Login</h3>
-  <form action="/action_page.php">
-  <label for="fname">Username</label>
-  <input type="text" id="fname" name="fname"><br><br>
+  <form action="/admin_login" method="post">
+  <label for="uname">Username</label>
+  <input type="text" id="uname" name="uname"  minlength="4" required><br><br>
   <label for="lname">Password</label>
-  <input type="text" id="lname" name="lname"><br><br>
+  <input type="password" id="pwd" name="pwd"  minlength="4" required><br><br>
   <input type="submit" value="Submit">
 </form>
+{% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
 </div>
 
 
